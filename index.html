@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<title>Conf Wall Test</title>
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+	<!-- Main Template -->
+	<link rel="stylesheet" href="assets/css/main.css">
+
+	<!-- Top JS -->
+	<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+</head>
+<body>
+
+	<div class="container-fluid full-height">
+		<div class="row full-height nomargin">
+			<div class="col-md-6 full-height nopad">
+
+				<div class="speaker-div">
+
+					<div class="track track1">
+						<div class="row nomargin">
+							<div class="col-md-3 text-align: center">
+								<div class="speaker-image"><img src='http://2015.hackference.co.uk/assets/speaker/dan_jenkins.png' width="100%" class="img-circle"></div>
+							</div>
+							<div class="col-md-9">
+								<div class="speaker-talk">How and Why We Run Internal Hackdays</div>
+								<div class="speaker-when">Track 1: 10:30 - 11:30</div>
+								<div class="speaker-who">Melinda Seckington</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="track track2">
+						<div class="row nomargin">
+							<div class="col-md-3 text-align: center">
+								<div class="speaker-image"><img src='http://2015.hackference.co.uk/assets/speaker/etiene_dalcol.jpg' width="100%" class="img-circle"></div>
+							</div>
+							<div class="col-md-9">
+								<div class="speaker-talk">What I learned teaching programming to 150 young women</div>
+								<div class="speaker-when">Track 2: 10:30 - 11:30</div>
+								<div class="speaker-who">Etiene Dalcol</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="track track3">
+						<div class="row nomargin">
+							<div class="col-md-3 text-align: center">
+								<div class="speaker-image"><img src='http://2015.hackference.co.uk/assets/speaker/phil_leggetter.png' width="100%" class="img-circle"></div>
+							</div>
+							<div class="col-md-9">
+								<div class="speaker-talk">Why You Should be Using Web Components Right Now. And How.</div>
+								<div class="speaker-when">Workshop: 10:30 - 12:30</div>
+								<div class="speaker-who">Phil Leggetter</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="sponsor-div">
+					<div class="sponsor-bg">
+						<div id="slider1_container" style="position: absolute; top: calc(50% - 50px);left: calc(50% - 150px)">
+							<!-- Slides Container -->
+							<div u="slides" style="cursor: move; position: absolute; left: 0px; top: 50%; width: 300px; height: 100px;overflow: hidden;vertical-align:middle">
+								<div><img u="image" src="http://2015.hackference.co.uk/assets/sponsor/microsoft_edge_60.png" /></div>
+								<div><img u="image" src="http://2015.hackference.co.uk/assets/sponsor/hired_60.png" /></div>
+								<div><img u="image" src="http://2015.hackference.co.uk/assets/sponsor/braintree_paypal.png" /></div>
+								<div><img u="image" src="http://2015.hackference.co.uk/assets/sponsor/pusher_60.png" /></div>
+								<div><img u="image" src="http://2015.hackference.co.uk/assets/sponsor/twilio_60.png" /></div>
+								<div><img u="image" src="http://2015.hackference.co.uk/assets/sponsor/proactive_60.png" /></div>
+								<div><img u="image" src="http://2015.hackference.co.uk/assets/sponsor/justgiving_60.png" /></div>
+								<div><img u="image" src="http://2015.hackference.co.uk/assets/sponsor/sendgrid_60.png" /></div>
+								<div><img u="image" src="http://2015.hackference.co.uk/assets/sponsor/majestic_60.png" /></div>
+								<div><img u="image" src="http://2015.hackference.co.uk/assets/sponsor/ef_60.png" /></div>
+								<div><img u="image" src="http://2015.hackference.co.uk/assets/sponsor/esri_60.png" /></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="col-md-6 full-height nopad">
+				<div class="twitter-div">
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- JS -->
+	<script src="assets/js/jquery.js"></script>
+	<script src="assets/js/slider.js"></script>
+	<script>
+		$(document).ready(function ($) {
+			var options = {
+				$AutoPlay: true,
+				$DragOrientation: 1                              
+			};
+			var jssor_slider1 = new $JssorSlider$("slider1_container", options);
+
+			getData('?first=true');
+			
+		});
+	</script>
+	<script>
+
+	function getData(varz) {
+
+		console.log("Get Data from Server");
+
+		$.get('http://conf.jakelprice.com/search.php' + varz, function(data) {
+			
+			if (data.tweets.length > 0) {
+				console.log("New tweets!");
+				$.each(data.tweets, function(n, d) {
+					$('.twitter-div').prepend('<div class="tweet"><div class="row"><div class="col-md-2"><img src="' + d.avatar + '" width="100%" class="img-circle"></div><div class="col-md-10"><div class="username">' + d.user + '</div><div class="tweet-contents">' + d.text + '</div></div></div></div>');
+				});
+			}
+
+			//- Display Tracks
+			$('.track1 .speaker-image img').attr('src', data.track1.avatar);
+			$('.track1 .speaker-talk').html(data.track1.talk);
+			$('.track1 .speaker-when').html(data.track1.info);
+			$('.track1 .speaker-who').html(data.track1.name);
+
+			$('.track2 .speaker-image img').attr('src', data.track2.avatar);
+			$('.track2 .speaker-talk').html(data.track2.talk);
+			$('.track2 .speaker-when').html(data.track2.info);
+			$('.track2 .speaker-who').html(data.track2.name);
+
+			$('.track3 .speaker-image img').attr('src', data.workshop.avatar);
+			$('.track3 .speaker-talk').html(data.workshop.talk);
+			$('.track3 .speaker-when').html(data.workshop.info);
+			$('.track3 .speaker-who').html(data.workshop.name);
+
+		});
+
+		setTimeout(function() {
+			getData("");
+		}, 10000);
+
+	}
+
+	</script>
+
+</body>
+</html>

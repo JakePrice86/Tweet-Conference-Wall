@@ -1,0 +1,116 @@
+/* main.css */
+
+html, body {
+	height: 100%;
+	background: #027394;
+	overflow: hidden;
+}
+
+.full-height { height: 100%; }
+.nopad { padding: 0 !important; }
+.nomargin { margin: 0 !important; }
+
+/* Special Divs */
+.container-fluid {
+	padding: 0;
+}
+
+.speaker-div {
+	min-height: 75%;
+	height: 75%;
+	position: relative;
+}
+
+.sponsor-div {
+	min-height: 25%;
+	position: relative;
+	display: flex;
+  	flex-flow: column wrap;
+}
+
+.twitter-div {
+	position: relative;
+	min-height: 100%;
+}
+
+.speaker-div {
+	background: url('../img/mike.png') no-repeat no-repeat center center;
+	background-size:cover;
+	text-align: center;
+}
+
+.bg {
+	background: #FFF;
+	min-height: 100%;
+	width: 100%;
+	flex: 1 50%;
+}
+
+.speaker-image {
+	padding: 40px 0 20px;
+	margin: 0 auto;
+	width: 70%;
+}
+
+.speaker-image img {
+	text-align: center;
+	border-radius: 100px;
+	border: 15px solid rgba(255, 255, 255, 0.2);
+}
+
+.speaker-talk {
+	text-align: left;
+	padding: 40px 20px 0 0px;
+	color: #FFF;
+	font-size: 35px;
+	line-height: 40px;
+	font-weight: 600;
+	text-shadow: 1px 1px 2px rgba(44, 62, 80, 0.8);
+	display: block;
+	width: 100%;
+}
+
+.speaker-when, .speaker-who {
+	color: #FFF;
+	font-size: 20px;
+	line-height: 35px;
+	text-align: left;
+}
+
+.sponsor-bg {
+	background: #FFF;
+	min-height: 100%;
+	width: 100%;
+	flex: 1;
+}
+
+.twitter-div {
+	min-height: 100%;
+	padding: 40px;
+}
+
+.tweet {
+	background: #039ac6;
+	width: 100%;
+	padding: 20px;
+	margin: 0 0 30px;
+}
+
+.username {
+	text-transform: uppercase;
+	font-size: 20px;
+	line-height: 24px;
+	color: #FFF;
+	font-weight: 700;
+	margin: 7px 0 10px;
+}
+
+.tweet-contents {
+	font-size: 16px;
+	line-height: 22px;
+	color: #FFF;
+}
+
+.track {
+	height: 33%;
+}
