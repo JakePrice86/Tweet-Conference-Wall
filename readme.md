@@ -5,13 +5,13 @@ As all existing solutions for a twitter wall with speakers and sponsors on it wa
 ## What does it use?
 
 ### Search Side
-- [twitter-api-php]("http://github.com/j7mbo/twitter-api-php") (Used for all twitter search API calls)
-- [fllat file DB]("https://github.com/wylst/fllat") (Used for stopping duplicate tweets from showing)
-- [Pusher API]("https://github.com/pusher/pusher-http-php") ("Used for pushing data to the server - not used in final version")
+- [twitter-api-php](http://github.com/j7mbo/twitter-api-php) (Used for all twitter search API calls)
+- [fllat file DB](https://github.com/wylst/fllat) (Used for stopping duplicate tweets from showing)
+- [Pusher API](https://github.com/pusher/pusher-http-php) (Used for pushing data to the server - not used in final version)
 
 ### Client Side
-- [Bootstrap]("https://github.com/twbs/bootstrap") (grids etc!)
-- [jQuery]("https://github.com/jquery/jquery") (Cross browser ajax calls FTW)
+- [Bootstrap](https://github.com/twbs/bootstrap) (grids etc!)
+- [jQuery](https://github.com/jquery/jquery) (Cross browser ajax calls FTW)
 
 ## Installation
 
@@ -33,7 +33,7 @@ LOL tests! The only checking tool that was built, was calling the search.php wit
 
 ## Contributors
 
-As mentioned, this is a hacky hack - but it worked perfectly in our conference. Feel free to pull apart etc. Pull requests loved though if your feeling creative :) I am happy to help you customise - you can contact me via twitter - [@jakelprice]("https://twitter.com/jakelprice")
+As mentioned, this is a hacky hack - but it worked perfectly in our conference. Feel free to pull apart etc. Pull requests loved though if your feeling creative :) I am happy to help you customise - you can contact me via twitter - [@jakelprice](https://twitter.com/jakelprice)
 
 ## License
 
